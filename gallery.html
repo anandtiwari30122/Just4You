@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Layouts for Mobile</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+        }
+        h2 {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .container {
+            max-width: 480px;
+            margin: auto;
+            padding: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        /* Layouts - Hidden by Default */
+        .layout { display: none; }
+        
+        /* 1. Grid Layout */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        /* 2. Carousel */
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding-bottom: 10px;
+        }
+        .carousel-container img {
+            flex: 0 0 auto;
+            width: 150px;
+            scroll-snap-align: start;
+        }
+
+        /* 3. Masonry */
+        .masonry {
+            column-count: 2;
+            column-gap: 8px;
+        }
+        .masonry img {
+            margin-bottom: 8px;
+        }
+
+        /* 4. Full-Screen Slideshow */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        .slideshow-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slideshow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* 5. Staggered Grid */
+        .staggered-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        .staggered-grid img:nth-child(3n) {
+            grid-column: span 2;
+        }
+
+        /* 6. Overlay Grid */
+        .overlay-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        .gallery-item {
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .nav button {
+            padding: 8px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Gallery Layouts</h2>
+
+    <div class="nav">
+        <button onclick="showLayout('grid')">Grid</button>
+        <button onclick="showLayout('carousel')">Carousel</button>
+        <button onclick="showLayout('masonry')">Masonry</button>
+        <button onclick="showLayout('slideshow')">Slideshow</button>
+        <button onclick="showLayout('staggered')">Staggered</button>
+        <button onclick="showLayout('overlay')">Overlay</button>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. Grid Layout -->
+        <div id="grid" class="layout grid-layout gallery">
+            <img src="./assets/0C7A1207.jpg" alt="">
+            <img src="./assets/0C7A1207.jpg" alt="">
+            <img src="./assets/0C7A1207.jpg" alt="">
+            <img src="./assets/0C7A1207.jpg" alt="">
+        </div>
+
+        <!-- 2. Carousel -->
+        <div id="carousel" class="layout">
+            <div class="carousel-container gallery">
+                <img src="./assets/0C7A1207.jpg" alt="">
+                <img src="./assets/0C7A1207.jpg" alt="">
+                <img src="./assets/0C7A1207.jpg" alt="">
+            </div>
+        </div>
+
+        <!-- 3. Masonry -->
+        <div id="masonry" class="layout masonry gallery">
+            <img src="./assets/0C7A1207.jpg" alt="">
+            <img src="./assets/0C7A1207.jpg" alt="">
+            <img src="./assets/0C7A1207.jpg" alt="">
+            <img src="./assets/0C7A1207.jpg" alt="">
+        </div>
+
+        <!-- 4. Slideshow -->
+        <div id="slideshow" class="layout">
+            <div class="slideshow-container">
+                <img id="slideImage" src="./assets/0C7A1207.jpg" alt="">
+                <button class="slideshow-btn prev" onclick="prevSlide()">❮</button>
+                <button class="slideshow-btn next" onclick="nextSlide()">❯</button>
+            </div>
+        </div>
+
+        <!-- 5. Staggered Grid -->
+        <div id="staggered" class="layout staggered-grid gallery">
+            <img src="./assets/0C7A1207.jpg" alt="">
+            <img src="./assets/0C7A1207.jpg" alt="">
+            <img src="./assets/0C7A1207.jpg" alt="">
+            <img src="./assets/0C7A1207.jpg" alt="">
+        </div>
+
+        <!-- 6. Overlay Grid -->
+        <div id="overlay" class="layout overlay-grid">
+            <div class="gallery-item">
+                <img src="./assets/0C7A1207.jpg" alt="">
+                <div class="overlay">Image 1</div>
+            </div>
+            <div class="gallery-item">
+                <img src="./assets/0C7A1207.jpg" alt="">
+                <div class="overlay">Image 2</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showLayout(id) {
+            document.querySelectorAll('.layout').forEach(el => el.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+        showLayout('grid'); // Default view
+
+        let images = ["./assets/0C7A1207.jpg", "./assets/0C7A1207.jpg", "./assets/0C7A1207.jpg"];
+        let index = 0;
+        function nextSlide() {
+            index = (index + 1) % images.length;
+            document.getElementById("slideImage").src = images[index];
+        }
+        function prevSlide() {
+            index = (index - 1 + images.length) % images.length;
+            document.getElementById("slideImage").src = images[index];
+        }
+    </script>
+
+</body>
+</html>

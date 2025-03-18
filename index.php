@@ -1,5 +1,6 @@
 <?php
 include('./header.php');
+include('./menu.php');
 ?>
 
 <!-- Hero Section -->
@@ -12,17 +13,16 @@ include('./header.php');
 </header>
 
 <!-- About Us -->
-<section id="about" class="container my-5 text-center">
 
     <?php
-    include('./about_us.php');
+    include('./about-us.php');
     ?>
 
-</section>
 
 <!-- Services Section -->
 <?php
 include('./services.php');
+include('./why_choose_us.php');
 ?>
 
 <!-- gallery -->

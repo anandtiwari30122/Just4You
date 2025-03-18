@@ -1,59 +1,56 @@
-<!-- about us -->
-<section class="py-3 py-md-5">
-  <div class="container">
-    <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-    <h2 class="mb-3">Who are We?</h2>
-    <p class="lead fs-4 mb-3 mb-xl-5">With years of experience and deep industry knowledge, we have a proven track record of success and are constantly pushing ourselves to stay ahead of the curve.</p>
-    </div>
-  </div>
-</section>
-
-<!-- why choose us -->
-<section class="py-3 py-md-5">
-  <div class="container">
-    <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-      <div class="col-12 col-lg-6">
-        <img class="img-fluid rounded" loading="lazy" src="./assets/0C7A9097.jpg" alt="About 2">
-      </div>
-      <div class="col-12 col-lg-6">
-        <div class="row justify-content-xl-center">
-          <div class="col-12 col-xl-10">
-            <h2 class="mb-3">Why Choose Us?</h2>
-            <p class="lead fs-4 mb-3 mb-xl-5">With years of experience and deep industry knowledge, we have a proven track record of success and are constantly pushing ourselves to stay ahead of the curve.</p>
-            <div class="d-flex align-items-center mb-3">
-              <div class="me-3 text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                </svg>
-              </div>
-              <div>
-                <p class="fs-5 m-0">Our evolution procedure is super intelligent.</p>
+<?php
+include('./header.php');
+include('./menu.php');
+?>
+<!-- Hero -->
+<section class="py-4 py-md-5" style="padding: 0px !important;min-width:99%;" >
+  <div class="container" style="margin: 0px; min-width:100%;padding: 0px !important;">
+    <div class="row" style="margin: 0px; min-width:100%;padding: 0px !important;">
+      <div class="col-12" style="margin: 0px; min-width:100%;padding: 0px !important;">
+        <div class="container-fluid bsb-hero-6 bsb-overlay border border-dark" style="--bsb-overlay-opacity: 0.5; --bsb-overlay-bg-color: var(--bs-light-rgb); background-image: url('./assets/0C7A1207.jpg'); max-height:562px !important;">
+          <div class="row justify-content-md-center" style="padding-top: 10%">
+            <div class="col-12 col-md-11 col-xl-10">
+              <h2 class="display-1 text-center text-md-start text-shadow-head fw-bold mb-4">Welcome to Jusst4You</h2>
+              <p class="lead text-center text-md-start text-shadow-body mb-5 d-flex justify-content-sm-center justify-content-md-start">
+                <span class="col-12 col-sm-10 col-md-8 col-xxl-7">Where every squeak, every rattle, and every wobble finds its solution, ensuring your ride is always smooth and worry-free.</span>
+              </p>
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center justify-content-md-start">
+                <a href="#!" class="btn bsb-btn-2xl btn-outline-dark">Explore More</a>
               </div>
             </div>
-            <div class="d-flex align-items-center mb-3">
-              <div class="me-3 text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                </svg>
-              </div>
-              <div>
-                <p class="fs-5 m-0">We deliver services beyond expectations.</p>
-              </div>
-            </div>
-            <div class="d-flex align-items-center mb-4 mb-xl-5">
-              <div class="me-3 text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                </svg>
-              </div>
-              <div>
-                <p class="fs-5 m-0">Let's hire us to reach your objectives.</p>
-              </div>
-            </div>
-            <button type="button" class="btn bsb-btn-xl btn-outline-primary rounded-pill">Connect Now</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<h1>who we are?</h1>
+<?php
+include('./services.php');
+include('./about-us.php');
+include('./testimonals.php');
+include('./our_team.php');
+include('./gallery.php');
+?>
+
+<!-- Call To Action 2 -->
+<section class="bsb-cta-1 py-5">
+    <div class="container">
+        <div class="card border-0 rounded-3 overflow-hidden text-center bsb-overlay" style="background-image: url('./assets/0C7A7217-Pano.jpg'); --bsb-overlay-opacity: .4; --bsb-overlay-bg-color:var(--bs-primary-rgb);">
+            <div class="card-body">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-12 col-md-10 col-xl-8 col-xxl-7">
+                        <h2 class="h5 mb-4 text-white text-uppercase">Our Services & Expertise</h2>
+                        <h2 class="display-4 text-white mb-5">We are a design agency studio delivering custom creative & unique websites.</h2>
+                        <a href="#!" class="btn btn-light bsb-btn-3xl rounded mb-0 text-nowrap">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php
+include('./footer.php');
+?>
